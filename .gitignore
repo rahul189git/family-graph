@@ -1,0 +1,18 @@
+out
+build
+.gradle
+.log
+.db
+
+# Eclipse
+.classpath
+.project
+.settings/
+build-eclipse
+
+# Intellij
+.idea
+*.iml
+*.ipr
+*.iws
+
