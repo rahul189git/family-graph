@@ -40,6 +40,17 @@ public final class RelationProvider {
 		return RELATION_PROVIDER;
 	}
 
+	private static <T> Collector<T, ?, T> toSingleton() {
+		return Collectors.collectingAndThen(
+				Collectors.toList(),
+				list -> {
+					if (list.size() == 0) {
+						return null;
+					}
+					return list.get(0);
+				}
+		);
+	}
 
 	public Person getFather(Person person) {
 		logger.info("Getting father of " + person.getName());
@@ -54,7 +65,7 @@ public final class RelationProvider {
 	public Person getMother(Person person) {
 		logger.info("Getting mother of " + person.getName());
 		Person father = getFather(person);
-		if(father==null){
+		if (father == null) {
 			return null;
 		}
 		return getSpouse(father);
@@ -253,18 +264,6 @@ public final class RelationProvider {
 
 		Collections.sort(cousins);
 		return cousins;
-	}
-
-	private static <T> Collector<T, ?, T> toSingleton() {
-		return Collectors.collectingAndThen(
-				Collectors.toList(),
-				list -> {
-					if (list.size() == 0) {
-						return null;
-					}
-					return list.get(0);
-				}
-		);
 	}
 
 	public final boolean memberExists(String personName) {

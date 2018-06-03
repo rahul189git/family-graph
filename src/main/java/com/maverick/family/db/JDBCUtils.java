@@ -23,7 +23,7 @@ import static com.maverick.family.db.Connection.createConnection;
 public final class JDBCUtils {
 	private final static Logger logger = LoggerFactory.getLogger(JDBCUtils.class);
 
-	private static final String JDBC_URL = "jdbc:sqlite:sqlite_sample.db";
+	private static final String JDBC_URL = "jdbc:sqlite:family_graph.db";
 
 	/**
 	 * Creates the table to hold person and their relations

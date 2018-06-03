@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class JDBCUtilsTest {
+public final class JDBCUtilsTest {
 	@BeforeClass
 	public static void setUp() {
 		List<Person> familyMembers = FamilyMembersData.getFamilyMembers();
@@ -53,6 +53,7 @@ public class JDBCUtilsTest {
 	@Test
 	public void should_be_to_get_person() {
 		Person alex = JDBCUtils.getPerson("Alex");
+		Assert.assertNotNull(alex);
 		Assert.assertEquals("Alex", alex.getName());
 		Assert.assertEquals(Gender.Male, alex.getGender());
 	}

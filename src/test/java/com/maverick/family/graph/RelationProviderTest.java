@@ -1,8 +1,5 @@
 package com.maverick.family.graph;
 
-import com.maverick.family.data.FamilyMembersData;
-import com.maverick.family.db.JDBCUtils;
-import com.maverick.family.entity.Edge;
 import com.maverick.family.entity.Gender;
 import com.maverick.family.entity.Person;
 import org.junit.Assert;
@@ -11,7 +8,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class RelationProviderTest {
+public final class RelationProviderTest {
 	@BeforeClass
 	public static void setUp() {
 		DataPopulator.populateInitialData();

@@ -16,3 +16,4 @@ build-eclipse
 *.ipr
 *.iws
 
+/*.db

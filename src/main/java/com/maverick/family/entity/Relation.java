@@ -1,4 +1,5 @@
 package com.maverick.family.entity;
+
 /*
 Enum class for modelling relation between immediate family members.
 As per problem statement, an immediate relation can only be Spouse, Parents, Child.

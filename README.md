@@ -5,7 +5,7 @@ The data is persisted into sqlite database.
 
 Cache:
 
-Data is cached into an in-memory graph on first request, it avoids database calls for
+For performance, data is cached into an in-memory graph on first request, thereby avoiding database calls for
 all read based operations. When user adds member or relation, the data is saved into database
 and cache is updated with new record.
 
@@ -13,7 +13,6 @@ Logging:
 
 Logging is enabled using logback. A log file "family.log" is created at the root level of utility.
 
-When we add members, calls 
 
 
         Build

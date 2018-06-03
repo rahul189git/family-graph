@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 class Connection {
 	private final static Logger logger = LoggerFactory.getLogger(Connection.class);
+
 	static {
 		try {
 			Class.forName("org.sqlite.JDBC");

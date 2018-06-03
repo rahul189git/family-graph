@@ -1,7 +1,5 @@
 package com.maverick.family.entity;
 
-import com.maverick.family.db.JDBCUtils;
-
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -68,7 +66,7 @@ public final class FamilyGraph {
 
 	}
 
-	public final Set<PersonConnection> getAdjConnections(Person person) {
+	private Set<PersonConnection> getAdjConnections(Person person) {
 		return Collections.unmodifiableSet(adjList.get(person));
 	}
 
@@ -86,10 +84,6 @@ public final class FamilyGraph {
 	public final Map<String, Person> getPersonMap() {
 		return Collections.unmodifiableMap(personMap);
 	}
-
-
-
-
 
 
 }

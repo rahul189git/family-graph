@@ -6,9 +6,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-public class LauncherTest {
+public final class LauncherTest {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 
@@ -21,28 +21,29 @@ public class LauncherTest {
 
 	@Test
 	public void show_relative_with_empty_input() {
-		String inputs="";
+		String inputs = "";
 		String result = Launcher.process(inputs);
-		assertEquals( "Empty input.", result);
+		assertEquals("Empty input.", result);
 	}
+
 	@Test
 	public void show_relative_with_wrong_input() {
-		String inputs="Person";
+		String inputs = "Person";
 		String result = Launcher.process(inputs);
-		assertEquals( "Invalid input: Person", result);
+		assertEquals("Invalid input: Person", result);
 	}
 
 	@Test
 	public void show_relative_with_wrong_input1() {
-		String inputs="Person=aa Relation=bb";
+		String inputs = "Person=aa Relation=bb";
 		String res = Launcher.process(inputs);
-		assertEquals( "The person \"aa\" is not a family member.", res);
+		assertEquals("The person \"aa\" is not a family member.", res);
 	}
 
 	@Test
 	public void show_relative_with_wrong_relation() {
-		String inputs="Person=Alex Relation=ABC";
+		String inputs = "Person=Alex Relation=ABC";
 		String res = Launcher.process(inputs);
-		assertEquals( "Unsupported relation ABC", res);
+		assertEquals("Unsupported relation ABC", res);
 	}
 }

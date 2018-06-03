@@ -11,7 +11,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
-public class LauncherSupportUtilsTest {
+public final class LauncherSupportUtilsTest {
 
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();

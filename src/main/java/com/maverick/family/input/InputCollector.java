@@ -8,7 +8,9 @@ import org.beryx.textio.web.RunnerData;
 import java.util.function.BiConsumer;
 
 import static com.maverick.family.input.Launcher.displayHelp;
-
+/*
+Entry class containing main method. It is the entry point for the console application.
+ */
 
 public class InputCollector implements BiConsumer<TextIO, RunnerData> {
 	public static void main(String[] args) {

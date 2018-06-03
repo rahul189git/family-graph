@@ -55,6 +55,13 @@ public final class RelationCreator {
 
 
 	private void createInMemoryGraphRelation(Person fromPerson, Person toPerson, Relation relation) {
+		if(fromPerson == null ){
+			throw new RuntimeException("Missing  person in request "+fromPerson);
+		}
+		if(toPerson == null ){
+			throw new RuntimeException("Missing  person in request "+toPerson);
+		}
+
 		logger.info("Adding " + fromPerson.getName() + " " + relation.name() + " as " + toPerson.getName());
 		//Populate In Memory Graph.
 		GRAPH.createRelation(fromPerson, toPerson, relation);

@@ -1,6 +1,7 @@
 package com.maverick.family.entity;
 
 import java.util.Objects;
+
 /*
 This class represents family members.
  */
