@@ -5,12 +5,8 @@ rem
 
 setlocal
 
-rem set your jdk location
-if not "%JAVA_HOME%" == "" goto gotJavaHome
-set JAVA_HOME=%ENV_JAVA_HOME%
-:gotJavaHome
-
-echo JAVA_HOME: %JAVA_HOME%
+set JAVA_HOME=%cd%\jdk1.8.0_111
+rem echo JAVA_HOME: %JAVA_HOME%
 
 if exist "%JAVA_HOME%\bin" goto okJavaHome
 echo The JAVA_HOME environment variable is not defined correctly
@@ -25,17 +21,9 @@ set PATH=%JAVA_HOME%\bin;%PATH%
 
 cd %~dp0
 
-rem set the classpath
-set CLASSPATH=.
-for %%i in (lib\*.jar) do call :setenv "%%~fi"
-echo Classpath: %CLASSPATH%
-
-
-
-echo.
 
 rem run the program
-java %JAVA_OPTS% com.maverick.family.input.InputCollector
+java -jar family-all-1.0.jar
 rem pause
 
 :setenv
